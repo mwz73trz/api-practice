@@ -27,7 +27,14 @@ function HomePage(props) {
   };
 
   return (
-    <ListGroup as="ul" style={{ listStyle: "none" }}>
+    <ListGroup
+      as="ul"
+      style={{
+        listStyle: "none",
+        width: "30%",
+        marginLeft: "35%",
+      }}
+    >
       {renderTasks()}
       <br />
       <Link to="tasks/add">Add Task</Link>

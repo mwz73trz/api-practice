@@ -19,7 +19,7 @@ function CreateTaskPage(props) {
     }
   };
   return (
-    <Form onSubmit={handleAddTask}>
+    <Form onSubmit={handleAddTask} style={{ width: "30%", marginLeft: "35%" }}>
       <Form.Group className="mb-3" controlId="title">
         <Form.Label>Title</Form.Label>
         <Form.Control type="text" placeholder="Task Title" />

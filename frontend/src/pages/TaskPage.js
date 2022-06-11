@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import taskAPI from "../api/taskAPI";
 import { Card } from "react-bootstrap";
 
@@ -22,7 +22,7 @@ function TaskPage(props) {
     }
 
     return (
-      <Card.Body>
+      <Card.Body style={{ width: "30%", marginLeft: "35%" }}>
         <Card.Title>
           <h2>Task Page</h2>
         </Card.Title>
@@ -31,6 +31,7 @@ function TaskPage(props) {
         </Card.Subtitle>
         <Card.Text>{task.description}</Card.Text>
         <Card.Text>{task.completed ? "Completed" : "Not Completed"}</Card.Text>
+        <Link to={`update`}>Update Task</Link>
       </Card.Body>
     );
   };
