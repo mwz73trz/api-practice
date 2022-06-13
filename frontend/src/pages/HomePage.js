@@ -9,7 +9,7 @@ function HomePage(props) {
 
   useEffect(() => {
     loadTasks();
-  }, []);
+  }, [props.username]);
 
   const loadTasks = async () => {
     const data = await taskAPI.getTasks();
@@ -35,6 +35,7 @@ function HomePage(props) {
         marginLeft: "35%",
       }}
     >
+      <h1>Tasks for {props.username}</h1>
       {renderTasks()}
       <br />
       <Link to="tasks/add">Add Task</Link>
