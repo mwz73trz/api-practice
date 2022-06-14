@@ -1,5 +1,10 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  UNSAFE_RouteContext,
+} from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import TaskPage from "./pages/TaskPage";
 import CreateTaskPage from "./pages/CreateTaskPage";
@@ -8,6 +13,7 @@ import NavBar from "./components/NavBar";
 import CheckLoginPage from "./pages/CheckLoginPage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
+import DeleteTaskPage from "./pages/DeleteTaskPage";
 import { useState } from "react";
 
 function App() {
@@ -56,6 +62,15 @@ function App() {
               <CheckLoginPage
                 username={username}
                 actualPage={() => <UpdateTaskPage username={username} />}
+              />
+            }
+          />
+          <Route
+            path="tasks/:id/delete"
+            element={
+              <CheckLoginPage
+                username={username}
+                actualPage={() => <DeleteTaskPage username={username} />}
               />
             }
           />

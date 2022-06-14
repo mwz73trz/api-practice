@@ -31,7 +31,8 @@ function TaskPage(props) {
         </Card.Subtitle>
         <Card.Text>{task.description}</Card.Text>
         <Card.Text>{task.completed ? "Completed" : "Not Completed"}</Card.Text>
-        <Link to={`update`}>Update Task</Link>
+        <Link to={`update`}>Update Task</Link> | |{" "}
+        <Link to={`/tasks/${task.id}/delete`}>Delete Task</Link>
       </Card.Body>
     );
   };
